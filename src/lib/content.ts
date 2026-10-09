@@ -23,9 +23,7 @@ export const profile = {
 	],
 	email: 'developer@abram.tech',
 	links: [
-		{ label: 'GitHub', href: '' },
-		{ label: 'LinkedIn', href: '' },
-		{ label: 'Substack', href: '' }
+		{ label: 'GitHub', href: 'https://github.com/aybruhm' }
 	] satisfies Link[]
 };
 

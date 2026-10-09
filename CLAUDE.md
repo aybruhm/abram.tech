@@ -73,8 +73,10 @@ bash deploy.sh     # on hadal only: ci, check, build, rsync build/ -> /srv/abram
 
 This is a **public** site. Only professional information goes in. Never add family details, nationality or immigration matters, company finances or salary, health, or anything else personal, even if it appears in other context.
 
+**Confirmed by Abram**
+- Profile links: GitHub only (`https://github.com/aybruhm`). No LinkedIn or Substack. Do not add them back.
+
 **Pending review by Abram (not yet confirmed for publication)**
-- GitHub, LinkedIn and Substack URLs are empty (hidden). Abram needs to supply them.
 - Dates are omitted for every role except BidScript (2026 to present). Job titles are omitted where unknown. Do not invent them.
 - Publishing BidScript by name, his role there, and the Agenta.ai "200% query performance improvement" figure.
 - Contact address `developer@abram.tech` (may change to a dedicated public address).
@@ -103,7 +105,7 @@ Before calling any change done: `npm run check` is clean, `npm run build` succee
 
 1. Window resizing from edges and corners.
 2. Lighthouse pass (performance, accessibility, SEO) and an Open Graph image.
-3. Writing window fed by the Substack RSS at build time (prerendered, still static).
+3. Writing window fed by an RSS feed at build time (prerendered, still static). Parked: Abram does not publish a Substack link.
 4. Playwright smoke tests in CI: boot, open each app from icon, Start menu search and taskbar restore.
 5. Persist window positions per visitor in `localStorage` (try/catch, cosmetic only).
 6. Light/dark "theme" switch (Aero Basic vs Aero Glass).
