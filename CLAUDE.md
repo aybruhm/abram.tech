@@ -79,9 +79,7 @@ This is a **public** site. Only professional information goes in. Never add fami
 
 **Pending review by Abram (not yet confirmed for publication)**
 - Role titles and dates, and the Agenta.ai "200% query performance improvement" figure: parked while Experience is hidden. Do not invent them.
-- Publishing BidScript by name and his role there (still shown in About and the `whoami` command through `profile.current`).
-- Contact address `developer@abram.tech` (may change to a dedicated public address).
-- Project repo links (`href`) are empty for Waypoint, Provenance, Assay and Folio.
+- Project repo link (`href`) for hadal is empty.
 
 ## 6. Deployment contract (handled by hadal-stack)
 
