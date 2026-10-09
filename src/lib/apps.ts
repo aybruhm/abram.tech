@@ -1,7 +1,8 @@
 import type { Component } from 'svelte';
 import About from './apps/About.svelte';
 import Projects from './apps/Projects.svelte';
-import Experience from './apps/Experience.svelte';
+// EXPERIENCE: Experience hidden for now. To restore, uncomment every line marked "EXPERIENCE".
+// import Experience from './apps/Experience.svelte';
 import Skills from './apps/Skills.svelte';
 import Contact from './apps/Contact.svelte';
 import Cmd from './apps/Cmd.svelte';
@@ -31,14 +32,15 @@ export const apps = {
 		desktop: true,
 		pinned: true
 	},
-	experience: {
-		title: 'Experience',
-		icon: 'briefcase',
-		component: Experience,
-		size: [640, 560],
-		desktop: true,
-		pinned: true
-	},
+	// EXPERIENCE
+	// experience: {
+	// 	title: 'Experience',
+	// 	icon: 'briefcase',
+	// 	component: Experience,
+	// 	size: [640, 560],
+	// 	desktop: true,
+	// 	pinned: true
+	// },
 	skills: {
 		title: 'Programs and Features',
 		icon: 'gear',
@@ -93,7 +95,7 @@ export const isAppId = (v: string): v is AppId => v in apps;
 export const labels: Record<AppId, string> = {
 	about: 'About Me',
 	projects: 'Projects',
-	experience: 'Experience',
+	// experience: 'Experience', // EXPERIENCE
 	skills: 'Skills',
 	contact: 'Contact',
 	cmd: 'Command Prompt',

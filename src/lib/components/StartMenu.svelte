@@ -18,7 +18,7 @@
 	const right: { id: AppId; label: string }[] = [
 		{ id: 'about', label: profile.name },
 		{ id: 'projects', label: 'Projects' },
-		{ id: 'experience', label: 'Experience' },
+		// { id: 'experience', label: 'Experience' }, // EXPERIENCE
 		{ id: 'skills', label: 'Skills' },
 		{ id: 'contact', label: 'Contact' },
 		{ id: 'readme', label: 'readme.txt' }

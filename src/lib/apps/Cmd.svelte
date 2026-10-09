@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { appIds, isAppId, labels } from '#lib/apps.ts';
-	import { profile, projects, skills, experience } from '#lib/content.ts';
+	import { profile, projects, skills } from '#lib/content.ts';
+	// import { experience } from '#lib/content.ts'; // EXPERIENCE
 	import { wm } from '#lib/wm.svelte.ts';
 
 	const PROMPT = 'C:\\Users\\abram>';
@@ -32,10 +33,11 @@
 			help: 'List projects',
 			run: () => projects.map((p) => `  ${p.name.padEnd(12)}[${p.status}] ${p.tagline}`)
 		},
-		experience: {
-			help: 'Work history',
-			run: () => experience.map((r) => `  ${r.company}${r.role ? ` (${r.role})` : ''}: ${r.summary}`)
-		},
+		// EXPERIENCE
+		// experience: {
+		// 	help: 'Work history',
+		// 	run: () => experience.map((r) => `  ${r.company}${r.role ? ` (${r.role})` : ''}: ${r.summary}`)
+		// },
 		skills: {
 			help: 'List skills by category',
 			run: () => {
