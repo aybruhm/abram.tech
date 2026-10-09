@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { profile, projects, skills } from '#lib/content.ts';
+	import { profile, skills } from '#lib/content.ts';
 	import { wm } from '#lib/wm.svelte.ts';
 	import Icon from '#lib/components/Icon.svelte';
 
 	const rows: [string, string][] = [
-		['Role', `${profile.current.role}, ${profile.current.company}`],
-		['Focus', profile.current.focus],
 		['Location', profile.location],
-		['Projects', `${projects.length} (${projects.filter((p) => p.status === 'Active').length} active)`],
+		['Experience', `${profile.yearsExperience} years`],
 		['Installed skills', `${skills.length}`]
 	];
 </script>
@@ -45,6 +43,32 @@
 		<h2>Summary</h2>
 		{#each profile.summary as para}
 			<p>{para}</p>
+		{/each}
+
+		<h2>Current Work</h2>
+		<ul>
+			{#each profile.currentWork as item}
+				<li>{item}</li>
+			{/each}
+		</ul>
+
+		<h2>Projects</h2>
+		<ul>
+			{#each profile.featured as p}
+				<li>
+					<a href={p.href} target="_blank" rel="noopener noreferrer">{p.name}</a>: {p.description}
+				</li>
+			{/each}
+		</ul>
+
+		<h2>Technical Focus</h2>
+		{#each profile.technicalFocus as area}
+			<h3>{area.group}</h3>
+			<ul>
+				{#each area.items as item}
+					<li>{item}</li>
+				{/each}
+			</ul>
 		{/each}
 
 		<h2>System</h2>
@@ -154,6 +178,24 @@
 		line-height: 1.55;
 		margin: 0 0 8px;
 		max-width: 60ch;
+	}
+	article h3 {
+		margin: 12px 0 4px;
+		font-size: 12px;
+		font-weight: 600;
+		color: #1e395b;
+	}
+	ul {
+		margin: 0 0 8px;
+		padding-left: 18px;
+		max-width: 60ch;
+	}
+	li {
+		line-height: 1.55;
+		margin-bottom: 4px;
+	}
+	li a {
+		font-weight: 600;
 	}
 	dl {
 		display: grid;

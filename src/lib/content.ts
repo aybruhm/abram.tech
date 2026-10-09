@@ -16,12 +16,84 @@ export const profile = {
 		company: 'BidScript',
 		focus: 'Retrieval and agent layer of a bid management platform'
 	},
+	yearsExperience: 6,
 	summary: [
-		'I build the systems underneath AI products: retrieval pipelines, agent runtimes, and the backend and cloud infrastructure they run on.',
-		'Self-taught. My foundation comes from Harvard CS50, Designing Data-Intensive Applications, The Pragmatic Programmer, and two and a half years of structured independent study.',
-		'I prefer the work to speak for itself, so most of this site is the work.'
+		'I build production AI systems: retrieval, agents, evaluations, and the backend and cloud infrastructure that keeps them running.',
+		"I've been building software professionally for six years. I came into AI engineering through backend and cloud infrastructure, and that background shapes how I work. If an agent can't recover from a crash, explain what it did, or be tested before it ships, it isn't ready for production."
 	],
-	email: 'developer@abram.tech',
+	currentWork: [
+		'Building retrieval and agent systems for production AI systems',
+		'Building Assay, a durable financial planning agent on LangGraph',
+		'Open-source tooling for running AI agents safely in production'
+	],
+	featured: [
+		{
+			name: 'assay',
+			href: 'https://github.com/aybruhm/assay',
+			description:
+				"A durable financial planning agent built on LangGraph for users who need trustworthy answers about their financial situation without trusting the AI to do the arithmetic. The AI only reads the user's details and explains the results; every calculation runs in tested code that applies the financial rules of the user's country."
+		},
+		{
+			name: 'waypoint',
+			href: 'https://github.com/aybruhm/waypoint',
+			description:
+				'A Python SDK for building fault-tolerant LLM agent workflows. Recovers from crashes by replaying execution from checkpoints, without re-invoking LLM calls or completed tool invocations.'
+		},
+		{
+			name: 'provenance',
+			href: 'https://github.com/aybruhm/provenance',
+			description:
+				'Agentic compliance and governance middleware. Lets autonomous agents operate within policy-defined guardrails, with human approval for risky actions and cryptographic audit trails.'
+		},
+		{
+			name: 'safe-agentic-payment-system',
+			href: 'https://github.com/aybruhm/safe-agentic-payment-system',
+			description: 'An agent that initiates payments on its own, but only within policy limits it cannot override.'
+		},
+		{
+			name: 'ai-video-generation-poc-with-temporal',
+			href: 'https://github.com/aybruhm/ai-video-generation-poc-with-temporal',
+			description:
+				'An AI video generation pipeline (generation, S3 upload, token deduction, database write) orchestrated with Temporal workflows and FastAPI.'
+		},
+		{
+			name: 'folio',
+			href: 'https://github.com/aybruhm/folio',
+			description:
+				'A self-hostable investment tracker for portfolio management, performance analysis, and financial goal tracking.'
+		}
+	] satisfies { name: string; href: string; description: string }[],
+	technicalFocus: [
+		{
+			group: 'AI Engineering',
+			items: [
+				'Agents and agentic workflows (LangGraph, LangChain, PydanticAI, smolagents)',
+				'RAG and LLM evaluation (RAGAS, custom evaluators)',
+				'Vector and hybrid search (Qdrant, Elasticsearch)',
+				'Durable execution and workflow orchestration (Temporal, Celery, event sourcing)',
+				'Guardrails, human-in-the-loop approval, audit logging',
+				'Multi-provider model integration (LiteLLM, 12+ generative AI providers in production)'
+			]
+		},
+		{
+			group: 'Backend',
+			items: [
+				'Languages: Python, TypeScript',
+				'Frameworks: FastAPI, Django, Node.js',
+				'Data: PostgreSQL, Redis, MongoDB',
+				'Queues: Celery, RabbitMQ, Kafka, AWS SQS'
+			]
+		},
+		{
+			group: 'Infrastructure',
+			items: ['Cloud: AWS', 'Tooling: Pulumi, Docker, NGINX, GitHub Actions']
+		},
+		{
+			group: 'Frontend',
+			items: ['React, Svelte']
+		}
+	] satisfies { group: string; items: string[] }[],
+	email: 'me@abram.tech',
 	links: [
 		{ label: 'GitHub', href: 'https://github.com/aybruhm' }
 	] satisfies Link[]
@@ -46,7 +118,7 @@ export const projects: Project[] = [
 			'Open-source SDK that keeps multi-step agent workflows recoverable when models, tools or networks fail.',
 			'Phase 1 shipped on a hexagonal (ports and adapters) core. Phase 2 adds concurrent execution.'
 		],
-		href: ''
+		href: 'https://github.com/aybruhm/waypoint'
 	},
 	{
 		name: 'Provenance',
@@ -56,7 +128,7 @@ export const projects: Project[] = [
 		details: [
 			'Open-source middleware that sits between agents and the actions they take, so every decision is policy-checked and auditable.'
 		],
-		href: ''
+		href: 'https://github.com/aybruhm/provenance'
 	},
 	{
 		name: 'Assay',
@@ -67,7 +139,7 @@ export const projects: Project[] = [
 			'A LangGraph workflow agent that builds financial plans from a user\'s preferences and country.',
 			'Money is stored as fixed-scale integers. No floats, no Decimal type, no rounding surprises.'
 		],
-		href: ''
+		href: 'https://github.com/aybruhm/assay'
 	},
 	{
 		name: 'Folio',
@@ -75,7 +147,7 @@ export const projects: Project[] = [
 		status: 'Design',
 		stack: ['Self-hosted'],
 		details: ['Track holdings and performance on your own hardware, with no third party holding your data.'],
-		href: ''
+		href: 'https://github.com/aybruhm/folio'
 	},
 	{
 		name: 'hadal',
