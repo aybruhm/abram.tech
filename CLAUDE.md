@@ -51,7 +51,7 @@ bash deploy.sh     # on hadal only: ci, check, build, rsync build/ -> /srv/abram
 | `src/lib/components/Orb.svelte` | Original "A" monogram glass orb (Start button, boot screen, favicon) |
 | `src/lib/components/Wallpaper.svelte` | Original deep-water gradient with animated light ribbons and particles. Respects `prefers-reduced-motion` |
 | `src/lib/components/Power.svelte` | Boot splash, "Shutting down", "safe to close this tab" screens |
-| `src/lib/apps/*.svelte` | Window contents: `About` (Control Panel style), `Projects` (Explorer tiles/details + details pane), `Experience` (timeline + open-source table), `Skills` ("Programs and Features", sortable/searchable), `Contact` (mailto compose), `Cmd` (command prompt), `Readme` (Notepad) |
+| `src/lib/apps/*.svelte` | Window contents: `About` (Control Panel style), `Projects` (Explorer tiles/details + details pane), `Experience` (timeline + open-source table; **hidden**, see section 5), `Skills` ("Programs and Features", sortable/searchable), `Contact` (mailto compose), `Cmd` (command prompt), `Readme` (Notepad) |
 | `src/app.css` | Global tokens (`--taskbar-h`, fonts, colours) and shared classes: `.toolbar`, `.crumb`, `.btn`, `.tag`, `.sr-only` |
 
 **Extension recipes**
@@ -75,10 +75,11 @@ This is a **public** site. Only professional information goes in. Never add fami
 
 **Confirmed by Abram**
 - Profile links: GitHub only (`https://github.com/aybruhm`). No LinkedIn or Substack. Do not add them back.
+- Experience window: hidden for now, to be revisited. `Experience.svelte` and the `experience`/`openSource` data in `content.ts` are kept. The wiring is commented out in `apps.ts`, `StartMenu.svelte`, `About.svelte` and `Cmd.svelte`; every such line is marked `EXPERIENCE`, so `grep -rn EXPERIENCE src` finds them all. `#experience` deep links fall back to About. To restore, uncomment those lines and add `#experience` back to the link list in `Readme.svelte`.
 
 **Pending review by Abram (not yet confirmed for publication)**
-- Dates are omitted for every role except BidScript (2026 to present). Job titles are omitted where unknown. Do not invent them.
-- Publishing BidScript by name, his role there, and the Agenta.ai "200% query performance improvement" figure.
+- Role titles and dates, and the Agenta.ai "200% query performance improvement" figure: parked while Experience is hidden. Do not invent them.
+- Publishing BidScript by name and his role there (still shown in About and the `whoami` command through `profile.current`).
 - Contact address `developer@abram.tech` (may change to a dedicated public address).
 - Project repo links (`href`) are empty for Waypoint, Provenance, Assay and Folio.
 

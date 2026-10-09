@@ -20,7 +20,7 @@
 	<aside>
 		<h3>Control Panel Home</h3>
 		<button class="link" onclick={() => wm.open('projects')}>Projects</button>
-		<button class="link" onclick={() => wm.open('experience')}>Experience</button>
+		<!-- EXPERIENCE: <button class="link" onclick={() => wm.open('experience')}>Experience</button> -->
 		<button class="link" onclick={() => wm.open('skills')}>Skills</button>
 		<button class="link" onclick={() => wm.open('contact')}>Contact</button>
 		<div class="see">

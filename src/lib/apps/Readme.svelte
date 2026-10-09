@@ -9,7 +9,7 @@ drag it, minimise it, maximise it, close it. The Start menu has search,
 and the Command Prompt takes real commands (type "help").
 
 Links that open a window directly:
-  abram.tech/#about   #projects   #experience   #skills   #contact   #cmd
+  abram.tech/#about   #projects   #skills   #contact   #cmd
 
 How it is served
 ----------------
